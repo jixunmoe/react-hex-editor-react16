@@ -244,7 +244,12 @@ const HexEditor: React.RefForwardingComponent<HexEditorHandle, HexEditorProps> =
     for (let i = selectionStart; i < selectionEnd; i += 1) {
       selectedValue += currentEditMode === EDIT_MODE_ASCII
         ? String.fromCharCode(currentData[i])
-        : formatHexByte(currentData[i]);
+        : formatHexByte(currentData[i]) + ' ';
+    }
+
+    // Remove the last whitespace.
+    if (currentEditMode === EDIT_MODE_HEX) {
+      selectedValue = selectedValue.slice(0, -1);
     }
 
     if (selectionStart === selectionEnd && selectionStart >= dataLength) {
