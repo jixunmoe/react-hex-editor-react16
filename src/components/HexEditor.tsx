@@ -622,7 +622,7 @@ const HexEditor: React.RefForwardingComponent<HexEditorHandle, HexEditorProps> =
       case editMode === EDIT_MODE_ASCII: {
         if (!readOnly) {
           const key = Keycoder.fromEvent(e.nativeEvent);
-          if (key.isPrintableCharacter && key.charCode != null) {
+          if (key.isPrintableCharacter() && key.charCode != null) {
             const value = shiftKey ? key.shift.charCode : key.charCode;
             if (value != null) {
               setValue(selectionEnd, value);
