@@ -674,22 +674,20 @@ const HexEditor: React.RefForwardingComponent<HexEditorHandle, HexEditorProps> =
     }
   }, [autoFocus, focus]);
 
-  // Does not work when you have multiple instances running on the same page.
-  // It jumps around. Hence disabled.
-  // useLayoutEffect(() => {
-  //   if (rowListRef.current) {
-  //     const {
-  //       visibleStartIndex,
-  //       visibleStopIndex,
-  //     } = stateRef.current;
-  //     const rowIndex = Math.floor(state.cursorOffset / columns);
-  //     if (rowIndex <= visibleStartIndex) {
-  //       rowListRef.current.scrollToItem(rowIndex, 'center');
-  //     } else if (rowIndex >= visibleStopIndex) {
-  //       rowListRef.current.scrollToItem(rowIndex, 'center');
-  //     }
-  //   }
-  // }, [columns, state.cursorOffset]);
+  useLayoutEffect(() => {
+    if (rowListRef.current) {
+      const {
+        visibleStartIndex,
+        visibleStopIndex,
+      } = stateRef.current;
+      const rowIndex = Math.floor(state.cursorOffset / columns);
+      if (rowIndex <= visibleStartIndex) {
+        rowListRef.current.scrollToItem(rowIndex, 'center');
+      } else if (rowIndex >= visibleStopIndex) {
+        rowListRef.current.scrollToItem(rowIndex, 'center');
+      }
+    }
+  }, [columns, state.cursorOffset]);
 
   const rowCount = useMemo(
     () => Math.ceil(data.length / columns),

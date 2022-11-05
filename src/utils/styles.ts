@@ -9,6 +9,7 @@ export const hexEditorTheme = <K extends keyof HexEditorTheme>(key: K) =>
   };
 
 export default css`
+  position: relative;
   font-family: ${hexEditorTheme('fontFamily')};
   font-size: ${hexEditorTheme('fontSize')};
 
