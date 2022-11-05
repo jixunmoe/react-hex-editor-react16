@@ -7,13 +7,13 @@ View and edit binary data in React.
 [yarn][]:
 
 ```bash
-yarn add react-hex-editor
+yarn add @jixun/react-hex-editor-react-16
 ```
 
 [npm][]:
 
 ```bash
-npm install --save react-hex-editor
+npm install --save @jixun/react-hex-editor-react-16
 ```
 
 
@@ -23,8 +23,8 @@ This uses `styled-components` for ease of theming. It's a peer dependency, so do
 sure it's installed!
 
 ```jsx
-import HexEditor from 'react-hex-editor';
-import oneDarkPro from 'react-hex-editor/themes/oneDarkPro';
+import HexEditor from '@jixun/react-hex-editor-react-16';
+import oneDarkPro from '@jixun/react-hex-editor-react-16/themes/oneDarkPro';
 
 const YourApp = () => {
   // `data` contains the bytes to show. It can also be `Uint8Array`!
@@ -350,6 +350,8 @@ a pull request, and we'll figure it out from there.
 ## License
 
 ISC © [Keith McKnight](https://github.com/kmck)
+
+(Unofficial) maintaince update by Jixun.
 
 [yarn]: https://yarnpkg.com/lang/en/docs/install
 
