@@ -817,6 +817,7 @@ const HexEditor: React.RefForwardingComponent<HexEditorHandle, HexEditorProps> =
         style={editorStyle}
       >
         <input
+          readOnly={readOnly}
           onBlur={handleBlur}
           onFocus={handleFocus}
           onKeyDown={handleKeyDown}
